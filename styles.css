@@ -1,0 +1,60 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#number {
+    text-align: end;
+    font-size: 140px;
+    padding-bottom: 5%;
+    padding-right: 5%;
+}
+
+button {
+    border-radius: 50%;
+    border-color: transparent;
+    color: white;
+    font-size: 120px;
+    width: 130px;
+    height: 130px;
+    margin-top: 1%;
+    /* padding-bottom: 20%; */
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.clear-btn {
+    background-color: #D4D4D2;
+    color: black;
+}
+
+.num-btn {
+    background-color: #505050;
+}
+
+.operator-btn {
+    background-color: #FF9500;
+}
+
+.filler{
+    background-color: black;
+    color: black;
+}
+
+@media (max-width: 650px) {
+    #number {
+        font-size: 70px;
+    }
+    
+    button {
+        font-size: 50px;
+        width: 60px;
+        height: 60px;
+    }
+ 
+}
