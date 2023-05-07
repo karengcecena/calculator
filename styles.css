@@ -3,7 +3,7 @@ body {
     color: white;
 }
 
-#number {
+#display {
     text-align: end;
     font-size: 140px;
     padding-bottom: 5%;
@@ -18,7 +18,6 @@ button {
     width: 130px;
     height: 130px;
     margin-top: 1%;
-    /* padding-bottom: 20%; */
 }
 
 .parent {
@@ -46,9 +45,22 @@ button {
     color: black;
 }
 
+.display-container {
+    position: relative;
+    height: 200px;
+}
+
+#history {
+    /* background-color: #505050; */
+    /* text-align: end;
+    font-size: 30px;
+    color: rgb(133, 133, 133);
+    width: 75%; */
+}
+
 @media (max-width: 650px) {
-    #number {
-        font-size: 70px;
+    #display {
+        font-size: 30px;
     }
     
     button {
