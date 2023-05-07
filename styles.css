@@ -14,9 +14,9 @@ button {
     border-radius: 50%;
     border-color: transparent;
     color: white;
-    font-size: 120px;
-    width: 130px;
-    height: 130px;
+    font-size: 90px;
+    width: 100px;
+    height: 100px;
     margin-top: 1%;
 }
 
@@ -58,7 +58,7 @@ button {
     width: 75%; */
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1100px) {
     #display {
         font-size: 30px;
     }
