@@ -37,6 +37,7 @@ button {
 .clear-btn {
     background-color: #D4D4D2;
     color: black;
+    text-align: center;
 }
 
 .num-btn {
@@ -45,6 +46,11 @@ button {
 
 .operator-btn {
     background-color: #FF9500;
+    text-align: center;
+}
+
+.decimal{
+    text-align: center;
 }
 
 .filler{
