@@ -50,6 +50,6 @@ Next, scroll down and click on "Add to Home Screen".
 
 Then click on "Add" on the top right corner. 
 
-![alt text](https://github.com/karengcecena/calculator/blob/main/img/IMG_0132.jpg "App View")
+![alt text](https://github.com/karengcecena/calculator/blob/main/img/IMG_0135.jpg "App View")
 
 Now you have a calculator on your iPad!
