@@ -14,6 +14,7 @@ const button7 = document.getElementById("7");
 const button8 = document.getElementById("8");
 const button9 = document.getElementById("9");
 const button0 = document.getElementById("0");
+const buttonDecimal = document.getElementById("decimal");
 const buttonAdd = document.getElementById("add");
 const buttonSubtract = document.getElementById("subtract");
 const buttonMultiply = document.getElementById("multiply");
@@ -51,6 +52,9 @@ button9.addEventListener("click", function() {
 });
 button0.addEventListener("click", function() {
   updateDisplay("0");
+});
+buttonDecimal.addEventListener("click", function() {
+  updateDisplay(".");
 });
 
 // function to update the display with the given value
