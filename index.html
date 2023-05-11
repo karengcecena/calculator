@@ -5,52 +5,136 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Calculator Web App">
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script> -->
 
     <title>Calculator</title>
 </head>
-<body>
-    <div class="parent">
+<body class="bg-black text-white">
+    <div id = "parent" class="flex justify-center items-center min-h-screen">
         <div class="child">
-
-            <div class="display-container"> 
-                <div id="history"></div>
-                <div id="display"></div>
+            <div id="display-container" class="relative h-16 pb-2 mb-12"> 
+                <div id="history" class="text-right text-gray-400 pr-4 text-4xl"></div>
+                <div id="display" class="text-right pb-1 pr-4 text-7xl"></div>
             </div>
+            
+            <div class="calculator">
+                <div>   
+                    <button class="clear-btn rounded-full border-transparent text-black text-6xl py-4 px-5 bg-gray-300 text-center appearance-none" id="clear">C</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-6xl py-4 px-5 w-50vw h-50vw mt-1 appearance-none">F</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-6xl py-4 px-5 w-50vw h-50vw mt-1 appearance-none">F</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-6xl py-4 px-6 w-50vw h-50vw mt-1 bg-orange-500 text-center appearance-none" id="divide">÷</button>
+                </div>
 
-            <div>
-                <button class="clear-btn" id="clear">C</button>
-                <button class="filler">.</button>
-                <button class="filler">.</button>
-                <button class="operator-btn" id="divide">÷</button>
-            </div>
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="7">7</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="8">8</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="9">9</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-6xl py-4 px-7 w-50vw h-50vw mt-1 bg-orange-500 text-center appearance-none" id="multiply">x</button>
+                </div>
 
-            <div>
-                <button class="num-btn" id="7">7</button>
-                <button class="num-btn" id="8">8</button>
-                <button class="num-btn" id="9">9</button>
-                <button class="operator-btn" id="multiply">x</button>
-            </div>
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="4">4</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="5">5</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="6">6</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-6xl py-4 px-7 w-50vw h-50vw mt-1 bg-orange-500 text-center appearance-none" id="subtract">-</button>
+                </div>
 
-            <div>
-                <button class="num-btn" id="4">4</button>
-                <button class="num-btn" id="5">5</button>
-                <button class="num-btn" id="6">6</button>
-                <button class="operator-btn" id="subtract">-</button>
-            </div>
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-6 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="1">1</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="2">2</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="3">3</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-6xl py-4 px-6 w-50vw h-50vw mt-1 bg-orange-500 text-center appearance-none" id="add">+</button>
+                </div>
 
-            <div>
-                <button class="num-btn" id="1">1</button>
-                <button class="num-btn" id="2">2</button>
-                <button class="num-btn" id="3">3</button>
-                <button class="operator-btn" id="add">+</button>
-            </div>
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-5 w-50vw h-50vw mt-1 bg-gray-700 appearance-none" id="0">0</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-6xl py-4 px-8 w-50vw h-50vw mt-1 bg-gray-700 text-center appearance-none" id="decimal">.</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-6xl py-4 px-5 w-50vw h-50vw mt-1 appearance-none">F</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-6xl py-4 px-6 w-50vw h-50vw mt-1 bg-orange-500 text-center appearance-none" id="equals">=</button>
+                </div>
 
-            <div>
-                <button class="num-btn zero" id="0">0</button>
-                <button class="num-btn" id="decimal">.</button>
-                <button class="filler">.</button>
-                <button class="operator-btn" id="equals">=</button>
+                <!-- <div>    
+                    <button class="clear-btn rounded-full border-transparent text-black text-8vw w-10vw h-100vw mt-1 bg-gray-300 text-center appearance-none" id="clear">C</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-8vw w-10vw h-100vw mt-1 appearance-none">.</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-8vw w-10vw h-100vw mt-1 appearance-none">.</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-8vw w-10vw h-100vw mt-1 bg-orange-500 text-center appearance-none" id="divide">÷</button>
+                </div>
+
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="7">7</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="8">8</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="9">9</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-orange-500 text-center appearance-none" id="multiply">x</button>
+                </div>
+
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="4">4</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="5">5</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="6">6</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-orange-500 text-center appearance-none" id="subtract">-</button>
+                </div>
+
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="1">1</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="2">2</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="3">3</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-orange-500 text-center appearance-none" id="add">+</button>
+                </div>
+
+                <div>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-gray-700 appearance-none" id="0">0</button>
+                    <button class="num-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 text-center appearance-none" id="decimal">.</button>
+                    <button class="filler rounded-full border-transparent bg-black text-black text-8vw w-10vw h-10vw mt-1 appearance-none">.</button>
+                    <button class="operator-btn rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 bg-orange-500 text-center appearance-none" id="equals">=</button>
+                </div> -->
+
+                <!-- <div>
+                    class="rounded-full border-transparent text-white text-8vw w-10vw h-10vw mt-1 appearance-none"
+                    <button class="clear-btn" id="clear">C</button>
+                    <button class="filler">.</button>
+                    <button class="filler">.</button>
+                    <button class="operator-btn" id="divide">÷</button>
+                </div>
+
+                <div>
+                    <button class="num-btn" id="7">7</button>
+                    <button class="num-btn" id="8">8</button>
+                    <button class="num-btn" id="9">9</button>
+                    <button class="operator-btn" id="multiply">x</button>
+                </div>
+
+                <div>
+                    <button class="num-btn" id="4">4</button>
+                    <button class="num-btn" id="5">5</button>
+                    <button class="num-btn" id="6">6</button>
+                    <button class="operator-btn" id="subtract">-</button>
+                </div>
+
+                <div>
+                    <button class="num-btn" id="1">1</button>
+                    <button class="num-btn" id="2">2</button>
+                    <button class="num-btn" id="3">3</button>
+                    <button class="operator-btn" id="add">+</button>
+                </div>
+
+                <div>
+                    <button class="num-btn zero" id="0">0</button>
+                    <button class="num-btn" id="decimal">.</button>
+                    <button class="filler">.</button>
+                    <button class="operator-btn" id="equals">=</button>
+                </div> -->
             </div>
         </div>
     </div>

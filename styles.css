@@ -5,8 +5,7 @@ body {
 
 #display {
     text-align: end;
-    /* font-size: 140px; */
-    font-size: 10vw; /* Adjust the font size using a relative unit */
+    font-size: 10vw;
     padding-bottom: 1%;
     padding-right: 5%;
 }
@@ -15,19 +14,11 @@ button {
     border-radius: 50%;
     border-color: transparent;
     color: white;
-    /* font-size: 90px;
-    width: 100px;
-    height: 100px; */
-    /* font-size: 110px;
-    width: 120px;
-    height: 120px; */
-    font-size: 8vw; /* Adjust the font size using a relative unit */
-    width: 10vw; /* Adjust the width using a relative unit */
-    height: 10vw; /* Adjust the height using a relative unit */
+    font-size: 8vw;
+    width: 10vw; 
+    height: 10vw;
     margin-top: 1%;
     -webkit-appearance: none !important;
-    /* -moz-appearance: none;
-    /* appearance: none; */
 }
 
 .parent {
@@ -71,7 +62,7 @@ button {
     text-align: end;
     color:#716f6f;
     padding-right: 5%;
-    font-size: 3vw; /* Adjust the font size using a relative unit */
+    font-size: 3vw; 
 }
 
 /* for ipads and tablets */
