@@ -18,9 +18,12 @@ button {
     /* font-size: 90px;
     width: 100px;
     height: 100px; */
-    font-size: 110px;
+    /* font-size: 110px;
     width: 120px;
-    height: 120px;
+    height: 120px; */
+    font-size: 8vw; /* Adjust the font size using a relative unit */
+    width: 10vw; /* Adjust the width using a relative unit */
+    height: 10vw; /* Adjust the height using a relative unit */
     margin-top: 1%;
     -webkit-appearance: none !important;
     /* -moz-appearance: none;
@@ -63,22 +66,8 @@ button {
     height: 100px;
 }
 
-/* button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-} */
-
-#history {
-    /* background-color: #505050; */
-    /* text-align: end;
-    font-size: 30px;
-    color: rgb(133, 133, 133);
-    width: 75%; */
-}
-
 /* for ipads and tablets */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #display {
         font-size: 90px;
     }
@@ -88,9 +77,9 @@ button {
         width: 100px;
         height: 100px;
     }
-}
+} */
 
-/* for mobile devices */
+/* for mobile devices
 @media (min-width: 320px) and  (max-width: 480px) {
     #display {
         font-size: 30px;
@@ -104,7 +93,7 @@ button {
 }
 
 /* for anything smaller*/
-@media (max-width: 319px) {
+/* @media (max-width: 319px) {
     #display {
         display: none
     }
@@ -112,4 +101,4 @@ button {
     button {
         display: none
     }
-}
+} */
