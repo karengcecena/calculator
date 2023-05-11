@@ -6,7 +6,7 @@ body {
 #display {
     text-align: end;
     /* font-size: 140px; */
-    font-size: 110px;
+    font-size: 10vw; /* Adjust the font size using a relative unit */
     padding-bottom: 1%;
     padding-right: 5%;
 }
