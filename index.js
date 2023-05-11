@@ -1,7 +1,7 @@
 "use strict";
 
 // get references to HTML elements
-// const history = document.getElementById("history"); // element to hold history
+const history = document.getElementById("history"); // element to hold history
 const display = document.getElementById("display");
 const calculation = document.getElementById('calculation');
 const button1 = document.getElementById("1");
@@ -25,36 +25,47 @@ const buttonEquals = document.getElementById("equals");
 // add event listeners to buttons
 button1.addEventListener("click", function() {
   updateDisplay("1");
+  // updateHistory();
 });
 button2.addEventListener("click", function() {
   updateDisplay("2");
+  // updateHistory();
 });
 button3.addEventListener("click", function() {
   updateDisplay("3");
+  // updateHistory();
 });
 button4.addEventListener("click", function() {
   updateDisplay("4");
+  // updateHistory();
 });
 button5.addEventListener("click", function() {
   updateDisplay("5");
+  // updateHistory();
 });
 button6.addEventListener("click", function() {
   updateDisplay("6");
+  // updateHistory();
 });
 button7.addEventListener("click", function() {
   updateDisplay("7");
+  // updateHistory();
 });
 button8.addEventListener("click", function() {
   updateDisplay("8");
+  // updateHistory();
 });
 button9.addEventListener("click", function() {
   updateDisplay("9");
+  // updateHistory();
 });
 button0.addEventListener("click", function() {
   updateDisplay("0");
+  // updateHistory();
 });
 buttonDecimal.addEventListener("click", function() {
   updateDisplay(".");
+  // updateHistory();
 });
 
 // function to update the display with the given value
@@ -66,6 +77,13 @@ function updateDisplay(value) {
     }
 
     display.textContent += value;
+}
+
+// function to update the history based on current inputs
+function updateHistory() {
+  const currentValue = display.textContent;
+  const expression = `${currentValue} ${calculator.operator || ''}`;
+  history.textContent = expression;
 }
     
 // function to set the operator for the calculation
@@ -112,7 +130,7 @@ function calculate() {
     display.textContent = result.toFixed(2); // Round the result to 2 decimal places
 
     // add the calculation to the history
-    // history.textContent += calculator.firstOperand + " " + calculator.operator + " " + secondOperand + " = " + result + "  >>>  " + "\n";
+    history.textContent = calculator.firstOperand + " " + calculator.operator + " " + secondOperand + " = " + result + "\n";
     
     // clear the operator and first operand
     calculator.operator = null;
@@ -122,6 +140,7 @@ function calculate() {
 // function to clear the display and reset the calculator
 function clearCalculator() {
     display.textContent = "";
+    history.textContent = "";
     calculator.operator = null;
     calculator.firstOperand = null;
 }
@@ -134,6 +153,7 @@ buttonClear.addEventListener("click", function() {
 // add event listener to the equals button
 buttonEquals.addEventListener("click", function() {
     calculate();
+    // updateHistory();
 });
 
 // create an object to store calculator data
@@ -145,16 +165,20 @@ const calculator = {
 // add event listeners to math operation buttons
 buttonAdd.addEventListener("click", function() {
     setOperator("+");
+    // updateHistory();
 });
 
 buttonSubtract.addEventListener("click", function() {
     setOperator("-");
+    // updateHistory();
 });
 
 buttonMultiply.addEventListener("click", function() {
     setOperator("*");
+    // updateHistory();
 });
 
 buttonDivide.addEventListener("click", function() {
     setOperator("/");
+    // updateHistory();
 });

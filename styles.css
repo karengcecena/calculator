@@ -34,7 +34,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .clear-btn {
@@ -64,6 +64,13 @@ button {
 .display-container {
     position: relative;
     height: 100px;
+}
+
+#history {
+    text-align: end;
+    color:#716f6f;
+    padding-right: 5%;
+    font-size: 3vw; /* Adjust the font size using a relative unit */
 }
 
 /* for ipads and tablets */
