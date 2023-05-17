@@ -22,51 +22,70 @@ const buttonDivide = document.getElementById("divide");
 const buttonClear = document.getElementById("clear");
 const buttonEquals = document.getElementById("equals");
 
-// add event listeners to buttons
+// add event listeners to numbered buttons
 button1.addEventListener("click", function() {
   updateDisplay("1");
-  // updateHistory();
 });
 button2.addEventListener("click", function() {
   updateDisplay("2");
-  // updateHistory();
 });
 button3.addEventListener("click", function() {
   updateDisplay("3");
-  // updateHistory();
 });
 button4.addEventListener("click", function() {
   updateDisplay("4");
-  // updateHistory();
 });
 button5.addEventListener("click", function() {
   updateDisplay("5");
-  // updateHistory();
 });
 button6.addEventListener("click", function() {
   updateDisplay("6");
-  // updateHistory();
 });
 button7.addEventListener("click", function() {
   updateDisplay("7");
-  // updateHistory();
 });
 button8.addEventListener("click", function() {
   updateDisplay("8");
-  // updateHistory();
 });
 button9.addEventListener("click", function() {
   updateDisplay("9");
-  // updateHistory();
 });
 button0.addEventListener("click", function() {
   updateDisplay("0");
-  // updateHistory();
 });
 buttonDecimal.addEventListener("click", function() {
   updateDisplay(".");
-  // updateHistory();
 });
+
+// add event listeners to math operation buttons
+buttonAdd.addEventListener("click", function() {
+  setOperator("+");
+});
+buttonSubtract.addEventListener("click", function() {
+  setOperator("-");
+});
+buttonMultiply.addEventListener("click", function() {
+  setOperator("*");
+});
+buttonDivide.addEventListener("click", function() {
+  setOperator("/");
+});
+
+// add event listener to the clear button
+buttonClear.addEventListener("click", function() {
+  clearCalculator();
+});
+
+// add event listener to the equals button to perform calculations
+buttonEquals.addEventListener("click", function() {
+  calculate();
+});
+
+// create an object to store calculator data
+const calculator = {
+  operator: null,
+  firstOperand: null
+};
 
 // function to update the display with the given value
 function updateDisplay(value) {
@@ -77,13 +96,6 @@ function updateDisplay(value) {
     }
 
     display.textContent += value;
-}
-
-// function to update the history based on current inputs
-function updateHistory() {
-  const currentValue = display.textContent;
-  const expression = `${currentValue} ${calculator.operator || ''}`;
-  history.textContent = expression;
 }
     
 // function to set the operator for the calculation
@@ -144,41 +156,3 @@ function clearCalculator() {
     calculator.operator = null;
     calculator.firstOperand = null;
 }
-    
-// add event listener to the clear button
-buttonClear.addEventListener("click", function() {
-    clearCalculator();
-});
-
-// add event listener to the equals button
-buttonEquals.addEventListener("click", function() {
-    calculate();
-    // updateHistory();
-});
-
-// create an object to store calculator data
-const calculator = {
-    operator: null,
-    firstOperand: null
-};
-    
-// add event listeners to math operation buttons
-buttonAdd.addEventListener("click", function() {
-    setOperator("+");
-    // updateHistory();
-});
-
-buttonSubtract.addEventListener("click", function() {
-    setOperator("-");
-    // updateHistory();
-});
-
-buttonMultiply.addEventListener("click", function() {
-    setOperator("*");
-    // updateHistory();
-});
-
-buttonDivide.addEventListener("click", function() {
-    setOperator("/");
-    // updateHistory();
-});
